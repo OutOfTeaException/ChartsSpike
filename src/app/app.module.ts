@@ -9,17 +9,23 @@ import { ChartComponent } from './chart/chart.component';
 import {registerLocaleData} from '@angular/common';
 import localeDe from '@angular/common/locales/de';
 import localeDeExtra from '@angular/common/locales/extra/de';
+import { ChartsjsComponent } from './chartsjs/chartsjs.component';
+import { ChartsModule } from 'ng2-charts';
+
 registerLocaleData(localeDe, localeDeExtra);
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChartComponent
+    ChartComponent,
+    ChartsjsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GoogleChartsModule.forRoot()
+    GoogleChartsModule.forRoot(),
+    ChartsModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'de' }],
   bootstrap: [AppComponent]

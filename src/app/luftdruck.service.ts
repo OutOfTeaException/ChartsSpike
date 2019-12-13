@@ -18,8 +18,8 @@ export class LuftdruckService {
       let date = new Date(startDate.valueOf() + i * minute);
       sensordaten.push( {
         timestamp: date,
-        luftdruck: this.getRandomNumber(1015, 1022),
-        temperatur: this.getRandomNumber(20, 23)
+        luftdruck: this.getRandomNumber(1010, 1035),
+        temperatur: this.getRandomNumber(23, 27)
       });
     }
 
