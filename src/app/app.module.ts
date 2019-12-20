@@ -11,6 +11,14 @@ import localeDe from '@angular/common/locales/de';
 import localeDeExtra from '@angular/common/locales/extra/de';
 import { ChartsjsComponent } from './chartsjs/chartsjs.component';
 import { ChartsModule } from 'ng2-charts';
+import { PlotlychartComponent } from './plotlychart/plotlychart.component';
+
+import * as PlotlyJS from 'plotly.js/dist/plotly.js';
+import { PlotlyModule } from 'angular-plotly.js';
+import { EchartComponent } from './echart/echart.component';
+import { NgxEchartsModule } from 'ngx-echarts';
+
+//PlotlyModule.plotlyjs = PlotlyJS;
 
 registerLocaleData(localeDe, localeDeExtra);
 
@@ -19,13 +27,17 @@ registerLocaleData(localeDe, localeDeExtra);
   declarations: [
     AppComponent,
     ChartComponent,
-    ChartsjsComponent
+    ChartsjsComponent,
+    PlotlychartComponent,
+    EchartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GoogleChartsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    NgxEchartsModule
+    //PlotlyModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'de' }],
   bootstrap: [AppComponent]
