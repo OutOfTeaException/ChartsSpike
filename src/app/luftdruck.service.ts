@@ -6,7 +6,7 @@ import { Sensordaten } from './sensordaten'
 })
 export class LuftdruckService {
 
-  getMockSensordaten(dataCount: number): Sensordaten[] {
+  getRandomSensordaten(dataCount: number): Sensordaten[] {
     let sensordaten: Sensordaten[] = [];
 
     let nowTicks = new Date().valueOf();
@@ -32,7 +32,12 @@ export class LuftdruckService {
     return random;
   }
 
-  getSensordaten(): Sensordaten[] {
+  getSensordaten(dataCount?: number): Sensordaten[] {
+
+    if (dataCount) {
+      return this.getRandomSensordaten(dataCount);
+    }
+
     return  [
       { timestamp: new Date(2019, 11, 3, 8, 45), luftdruck: 1018.6, temperatur: 22 },
       { timestamp: new Date(2019, 11, 3, 8, 30), luftdruck: 1018.6, temperatur: 22.5 },

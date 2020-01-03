@@ -94,7 +94,7 @@ export class ChartsjsComponent implements OnInit {
   };
 
   showSensordaten() {
-     let sensordata = this.luftdruckService.getMockSensordaten(100);
+     let sensordata = this.luftdruckService.getSensordaten();
 
      sensordata.forEach(s => {
        this.luftdruckdatenY.push(s.luftdruck);

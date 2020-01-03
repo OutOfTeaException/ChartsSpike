@@ -56,6 +56,6 @@ export class ChartComponent implements OnInit {
 
   showSendordaten() {
     //this.data = this.luftdruckService.getSensordaten().map(s => [s.timestamp, s.luftdruck, s.temperatur]);
-    this.data = this.luftdruckService.getMockSensordaten(100).map(s => [s.timestamp, s.luftdruck, s.temperatur]);
+    this.data = this.luftdruckService.getSensordaten().map(s => [s.timestamp, s.luftdruck, s.temperatur]);
   }
 }
