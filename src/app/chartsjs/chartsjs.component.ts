@@ -45,9 +45,9 @@ export class ChartsjsComponent implements OnInit {
             labelString: 'Messzeitpunkt'
         },
         time: {
-          displayFormats: {
-              quarter: 'dd.MM.YYYY '
-          }
+          // displayFormats: {
+          //     quarter: 'dd.MM.YYYY '
+          // }
       }
       }],
       yAxes: [{
@@ -59,10 +59,10 @@ export class ChartsjsComponent implements OnInit {
             display: true,
             labelString: 'Luftdruck mbar'
         },
-        ticks: {
-            min: 1010,
-            max: 1035
-          }
+        // ticks: {
+        //     min: 1010,
+        //     max: 1035
+        //   }
         },
       {
         id: 'B',
@@ -73,10 +73,10 @@ export class ChartsjsComponent implements OnInit {
             display: true,
             labelString: 'Raum G207 / °C'
         },
-        ticks: {
-            min: 23,
-            max: 27
-        }
+        // ticks: {
+        //     min: 23,
+        //     max: 27
+        // }
       }]
     },
     plugins: {
