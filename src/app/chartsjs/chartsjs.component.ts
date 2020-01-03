@@ -35,6 +35,7 @@ export class ChartsjsComponent implements OnInit {
   //public lineChartOptions: (ChartOptions & { annotation: any }) = {
     public lineChartOptions: ChartOptions = {
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
       xAxes: [{
         type: 'time',

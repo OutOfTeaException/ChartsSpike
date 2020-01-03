@@ -43,8 +43,8 @@ export class ChartComponent implements OnInit {
     //   maxZoomIn: 4.0
     // },
   };
-  width = 1000;
-  height = 750;
+  width = 800;
+  height = 500;
   
   
 
