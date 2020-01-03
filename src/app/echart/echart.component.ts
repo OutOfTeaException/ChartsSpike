@@ -21,6 +21,11 @@ export class EchartComponent implements OnInit {
   }
 
   chartOption: EChartOption = {
+    grid: [
+      {
+          height: '70%'
+      }
+    ],
     xAxis: {
       type: 'time',
       axisLabel: {
@@ -42,10 +47,14 @@ export class EchartComponent implements OnInit {
       name: 'Luftdruck (mbar)',
       type: 'value',
       scale: true,
-      nameRotate: 90,
-      nameLocation: 'middle',
-      nameGap: 50,
-      boundaryGap: ['10%', '10%'],
+      //nameRotate: 90,
+      nameLocation: 'end',
+      nameGap: 20,
+      nameTextStyle: {
+        color: '#0089D6',
+        fontSize: 14
+      },
+      //boundaryGap: ['10%', '10%'],
       axisLabel: {
       formatter:function (value, index) {
         let n = new Number(value);
@@ -56,10 +65,14 @@ export class EchartComponent implements OnInit {
       name: 'Temperatur (°C)',
       type: 'value',
       scale: true,
-      nameRotate: -90,
-      nameLocation: 'middle',
-      nameGap: 50,
-      boundaryGap: ['10%', '10%'],
+      //nameRotate: 0,
+      nameLocation: 'end',
+      nameGap: 20,
+      nameTextStyle: {
+        color: '#00C960',
+        fontSize: 14
+      },
+      //boundaryGap: ['10%', '10%'],
       axisLabel: {
         formatter:function (value, index) {
           let n = new Number(value);
@@ -72,9 +85,6 @@ export class EchartComponent implements OnInit {
       data: this.luftdruckdatenY,
       type: 'line',
       showSymbol: false,
-      lineStyle: {
-        color: "#0089D6"
-      }
     },
     {
       name: 'Temperatur',
@@ -82,19 +92,29 @@ export class EchartComponent implements OnInit {
       type: 'line',
       yAxisIndex: 1,
       showSymbol: false,
-      lineStyle: {
-        color: "#00C960"
-      }
     }],
      legend: {
-       //data: ['Luftdruck','Temperatur'],
-    
+       //align: 'left',
+       bottom: 10,
+       data: [
+         {
+           name: 'Luftdruck',
+           icon: 'roundRect'
+         },
+         {
+           name: 'Temperatur',
+           icon: 'roundRect'
+        }
+      ]
   //     //x: 'left'
    },
+  color: ['#0089D6', '#00C960'],
   dataZoom: [
       {
           show: true,
           realtime: true,
+          //top: '80%',
+          bottom: '50px'
           //start: 65,
           //end: 85
       },

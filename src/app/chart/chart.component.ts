@@ -12,7 +12,10 @@ export class ChartComponent implements OnInit {
   type = 'Line';
   data = [];
   columnNames = ['Datum', 'Luftdruck', 'Temperatur'];
+  
   options = {
+    axisTitlesPosition: 'out',  
+    legend: { position: 'bottom' },
     hAxis: {
       title: "Datum",
       format: 'dd.MM.yyyy',
@@ -27,8 +30,8 @@ export class ChartComponent implements OnInit {
     axes: {
       y: {
        // Gives each series an axis name that matches the Y-axis below.
-       Luftdruck: {label: 'Luftdruck in mbar'},
-       Temperatur: {label: 'Temperatur in °C'}
+       Luftdruck: { label: 'Luftdruck in mbar'} ,
+       Temperatur: { label: 'Temperatur in °C' }
       }
     },
     series: {
@@ -47,6 +50,7 @@ export class ChartComponent implements OnInit {
   height = 500;
   
   
+  
 
   constructor(private luftdruckService: LuftdruckService) { }
 
@@ -55,7 +59,6 @@ export class ChartComponent implements OnInit {
   }
 
   showSendordaten() {
-    //this.data = this.luftdruckService.getSensordaten().map(s => [s.timestamp, s.luftdruck, s.temperatur]);
     this.data = this.luftdruckService.getSensordaten().map(s => [s.timestamp, s.luftdruck, s.temperatur]);
   }
 }

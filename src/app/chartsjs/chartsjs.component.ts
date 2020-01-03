@@ -25,9 +25,23 @@ export class ChartsjsComponent implements OnInit {
   public lineChartType = 'line';
 
   public lineChartData: ChartDataSets[] = [
-     { data: this.luftdruckdatenY, label: 'Luftdruck', yAxisID: 'A', fill: false, borderColor: '#0089D6', pointBackgroundColor: '#0089D6'
-    },
-     { data: this.temperaturdatenY, label: 'Temperatur', yAxisID: 'B', fill: false, borderColor: '#00C960', pointBackgroundColor: '#00C960' },
+     {
+       data: this.luftdruckdatenY,
+       label: 'Luftdruck',
+       yAxisID: 'A',
+       fill: false,
+       borderColor: '#0089D6',
+       pointBackgroundColor: '#0089D6',
+       pointRadius: 0
+    }, { 
+       data: this.temperaturdatenY,
+       label: 'Temperatur',
+       yAxisID: 'B',
+       fill: false,
+       borderColor: '#00C960',
+       pointBackgroundColor: '#00C960',
+       pointRadius: 0
+     },
      //{ data: this.datumX, label: 'Messzeitpunkt' }
   ];
 
@@ -35,6 +49,9 @@ export class ChartsjsComponent implements OnInit {
 
   //public lineChartOptions: (ChartOptions & { annotation: any }) = {
     public lineChartOptions: ChartOptions = {
+      legend: {
+        position: "bottom"
+      },
     responsive: true,
     maintainAspectRatio: false,
     scales: {
@@ -46,10 +63,13 @@ export class ChartsjsComponent implements OnInit {
             labelString: 'Messzeitpunkt'
         },
         time: {
-          // displayFormats: {
-          //     quarter: 'dd.MM.YYYY '
-          // }
-      }
+            unit: 'day',
+            displayFormats: {
+                //'minute': 'YYYY-MM-DD HH:mm:ss',
+                //'hour': 'YYYY-MM-DD HH:mm:ss',
+                'day': 'DD.MM.YYYY'
+            }
+        },
       }],
       yAxes: [{
         id: 'A',
@@ -58,7 +78,7 @@ export class ChartsjsComponent implements OnInit {
         display: true,
         scaleLabel: {
             display: true,
-            labelString: 'Luftdruck mbar'
+            labelString: 'Luftdruck mbar',
         },
         // ticks: {
         //     min: 1010,
