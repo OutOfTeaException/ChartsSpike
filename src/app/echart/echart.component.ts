@@ -100,18 +100,7 @@ export class EchartComponent implements OnInit {
   ],
   tooltip : {
     trigger: 'axis',
-    formatter: formatTooltip();
-       // axisPointer: {
-    //     type: 'cross',
-    //     animation: false,
-    //     label: {
-    //         backgroundColor: '#505765'
-    //     }
-    // }
-},
-}
-  
-function(params) {
+    formatter: function(params) {
 
       if (!params[0] && !params[0].data) {
         return;
@@ -140,6 +129,16 @@ function(params) {
       
       return tooltip;
     }
+       // axisPointer: {
+    //     type: 'cross',
+    //     animation: false,
+    //     label: {
+    //         backgroundColor: '#505765'
+    //     }
+    // }
+},
+}
+  
 
   showSensordaten() {
     let sensordata = this.luftdruckService.getSensordaten();
