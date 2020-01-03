@@ -72,6 +72,9 @@ export class EchartComponent implements OnInit {
       data: this.luftdruckdatenY,
       type: 'line',
       showSymbol: false,
+      lineStyle: {
+        color: "#0089D6"
+      }
     },
     {
       name: 'Temperatur',
@@ -79,11 +82,15 @@ export class EchartComponent implements OnInit {
       type: 'line',
       yAxisIndex: 1,
       showSymbol: false,
+      lineStyle: {
+        color: "#00C960"
+      }
     }],
-    legend: {
-      data: ['Luftdruck','Temperatur']
-      //x: 'left'
-  },
+     legend: {
+       //data: ['Luftdruck','Temperatur'],
+    
+  //     //x: 'left'
+   },
   dataZoom: [
       {
           show: true,

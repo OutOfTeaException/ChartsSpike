@@ -25,8 +25,9 @@ export class ChartsjsComponent implements OnInit {
   public lineChartType = 'line';
 
   public lineChartData: ChartDataSets[] = [
-     { data: this.luftdruckdatenY, label: 'Luftdruck', yAxisID: 'A', fill: false},
-     { data: this.temperaturdatenY, label: 'Temperatur', yAxisID: 'B', fill: false },
+     { data: this.luftdruckdatenY, label: 'Luftdruck', yAxisID: 'A', fill: false, borderColor: '#0089D6', pointBackgroundColor: '#0089D6'
+    },
+     { data: this.temperaturdatenY, label: 'Temperatur', yAxisID: 'B', fill: false, borderColor: '#00C960', pointBackgroundColor: '#00C960' },
      //{ data: this.datumX, label: 'Messzeitpunkt' }
   ];
 
@@ -79,6 +80,7 @@ export class ChartsjsComponent implements OnInit {
         // }
       }]
     },
+    
     plugins: {
         zoom: {
             pan: {

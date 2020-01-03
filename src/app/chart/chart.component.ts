@@ -32,8 +32,8 @@ export class ChartComponent implements OnInit {
       }
     },
     series: {
-      0: {axis: 'Luftdruck'},
-      1: {axis: 'Temperatur'}
+      0: {axis: 'Luftdruck', color: '#0089D6'},
+      1: {axis: 'Temperatur', color: '#00C960'}
     },
     // TODO: Funktioniert nicht... vielleicht nur mit dem Classic Graph?
     // explorer: { 
