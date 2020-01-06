@@ -113,18 +113,27 @@ export class EchartComponent implements OnInit {
       {
           show: true,
           realtime: true,
-          //top: '80%',
           bottom: '50px'
-          //start: 65,
-          //end: 85
       },
       {
           type: 'inside',
           realtime: true,
-          //start: 65,
-          //end: 85
       }
   ],
+  toolbox: {
+    left: 'center',
+    feature: {
+      dataZoom: {
+        title: {
+          zoom: 'Zoom',
+          back: 'Zoom zurück'
+        }
+      },
+      restore: {    
+        title: 'Zoom zurücksetzen'   
+      }
+    },
+  },
   tooltip : {
     trigger: 'axis',
     formatter: function(params) {
