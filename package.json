@@ -21,7 +21,7 @@
     "@angular/router": "~8.2.4",
     "angular-google-charts": "^0.1.6",
     "angular-plotly.js": "^1.4.2",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "chartjs-plugin-zoom": "^0.7.5",
     "echarts": "^4.5.0",
     "moment": "^2.24.0",
